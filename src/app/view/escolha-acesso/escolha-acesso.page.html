@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>escolha de Acesso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="irParaLogarUsuario()" >
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab horizontal="center" vertical="bottom">
+    <ion-fab-button (click)="irParaLogarMercado()" >
+      <ion-icon name="bag-handle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

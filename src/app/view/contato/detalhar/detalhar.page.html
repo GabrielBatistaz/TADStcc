@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda de Contatos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <ion-item>
+  <ion-toggle (ionChange)="habilitar()">Habilitar Edição</ion-toggle>
+ </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Nome" placeholder="Insira o nome" [(ngModel)]="nome" disabled="{{edicao}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Preço" type="number" placeholder="Insira o preço" [(ngModel)]="preco" disabled="{{edicao}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Descrição" placeholder="Insira a descrição" [(ngModel)]="descricao" disabled="{{edicao}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select label="Gênero" placeholder="Selecione" [(ngModel)]="genero" disabled="{{edicao}}">
+        <ion-select-option value="Limpeza">Limpeza</ion-select-option>
+        <ion-select-option value="Frios">Frios</ion-select-option>
+        <ion-select-option value="Higiene">Higiene</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <img src="{{this.mercadoria.downloadURL}}" />
+    <ion-item>
+      <ion-button size="default" color="success" shape="round" disabled="{{edicao}}">
+        <input type="file" (change)="uploadFile($event.target)" />
+      </ion-button>
+    </ion-item>
+     <ion-button expand="full" (click)="editar()" disabled="{{edicao}}">Salvar</ion-button>
+     <ion-button expand="full" (click)="excluir()" color="danger" disabled="{{edicao}}">Excluir</ion-button>
+  </ion-list>
+</ion-content>
