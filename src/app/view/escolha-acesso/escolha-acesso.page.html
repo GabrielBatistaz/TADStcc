@@ -1,19 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>escolha de Acesso</ion-title>
+    <ion-title>Escolha de Acesso</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-fab horizontal="end" vertical="bottom">
-    <ion-fab-button (click)="irParaLogarUsuario()" >
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <ion-fab horizontal="center" vertical="bottom">
-    <ion-fab-button (click)="irParaLogarMercado()" >
-      <ion-icon name="bag-handle-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid class="ion-justify-content-center">
+    <ion-row>
+      <ion-col size="12" text-center>
+        <h1 class="welcome-title">Bem-vindo!</h1>
+        <p class="welcome-subtitle">Escolha a sua conta:</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" (click)="irParaLogarUsuario()" color="primary" class="custom-button">
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <span>Conta de Usuário</span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button expand="block" (click)="irParaLogarMercado()" color="secondary" class="custom-button">
+          <ion-icon slot="start" name="bag-handle-outline"></ion-icon>
+          <span>Conta de Mercado</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
